@@ -35,4 +35,21 @@ body {
 
 .content {
     grid-row:2/3;
+    display:flex;
+    flex-wrap:wrap;
+    gap:0.2rem;
+
+
+}
+
+.contentContainer {
+    border:2px solid blue;
+    width:20vw;
+    height:30vh;
+    background-color:aqua;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+
+
 }
