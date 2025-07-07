@@ -10,3 +10,29 @@ body {
     font-size:16px;
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
+
+.main-container {
+    border:2px solid black;
+    display:grid;
+    width:90vw;
+    height:99vh;
+    margin:auto;
+    grid-template-rows:10vh 85vh;
+    gap:0.3rem;
+    background-color:white;
+}
+
+.header, .content {
+    border: 2px solid red;
+}
+
+.header {
+    grid-row:1/2;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+}
+
+.content {
+    grid-row:2/3;
+}
