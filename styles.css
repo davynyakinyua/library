@@ -15,9 +15,8 @@ body {
     border:2px solid black;
     display:grid;
     width:90vw;
-    height:99vh;
     margin:auto;
-    grid-template-rows:10vh 85vh;
+    grid-template-rows:10vh 100%;
     gap:0.3rem;
     background-color:white;
 }
@@ -38,6 +37,7 @@ body {
     display:flex;
     flex-wrap:wrap;
     gap:0.2rem;
+    padding-left:3rem;
 
 
 }

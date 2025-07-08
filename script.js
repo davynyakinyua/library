@@ -4,8 +4,6 @@ console.log("Hello world");
 
 const library = [];
 
-let bookTitle;
-
 //create a constructor function for books
 
 function Books (name, author, pages) {
@@ -45,14 +43,20 @@ function book (name, author, pages) {
 }
 
 
-// function for the display of books on the viewport
+
 // Dom manipulation
+
+// create container element
+
+let container = document.getElementById("content");
+
+// function for the display of books on the viewport
 
 function display () {
 
-    // create container element
+    // clear the container before adding new content
 
-    let container = document.getElementById("content");
+    container.innerHTML = '';
 
     // create a grid dynamically using a loop
 
@@ -62,28 +66,65 @@ function display () {
 
         contentContainer.className = "contentContainer"
 
-        contentContainer.innerText = bookTitle.name
+        // access the name of the book from the library array
+        contentContainer.innerText = library[i].name;
 
+        // append the container to the main-container
         container.appendChild(contentContainer);
 
     }
 
+
 }
 
 
-// A button and event listener that calls the addNewBook function
+// new book function that adds a book to the library
+
+function newBook () {
+
+    // clear the viewport
+
+    container.innerHTML = '';
+
+    // get the form container
+
+    let container = document.getElementById("content");
+
+    // create a form element
+
+    let form = document.createElement("form");
+
+    // create a label and input for name
+
+
+
+}
+
+//button to call the function new book
+
+// event listener for button
 
 
 
 
 // function removeBook for removing book from library
+
+
+
 // Button that call function removeBook
 
+// eventlistener for the button
 
 
 
 
 
-// A button that call readUnread() method prototype of constuctor function
+
+// A function read that calls the book objects prototype method  readUnread
+
+
+// button that calls the function 
+
+// eventlisterner for the button
 
 
