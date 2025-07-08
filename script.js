@@ -2,7 +2,15 @@ console.log("Hello world");
 
 // initialize the an array to store all the books
 
-const library = [];
+const library = [
+    {name:"To Kill a Mockingbird", author:"Harper Lee", pages:281}, {name:"1984", author:"George Orwell", pages:328},
+    {name:"Pride and Prejudice", author:"Jane Austen", pages:279}, {name:"The Great Gatsby", author:"F. Scott Fitzgerald", pages:180},
+    {name:"Moby Dick", author:"Herman Melville", pages:585}, {name:"War and Peace", author:"Leo Tolstoy", pages:1225},
+    {name:"The Catcher in the Rye", author:"J.D. Salinger", pages:277}, {name:"The Lord of the Rings", author:"J.R.R. Tolkien", pages:1200},
+    {name:"The Alchemist", author:"Paulo Coelho", pages:208}, {name:"The Hobbit", author:"J.R.R. Tolkien", pages:310},
+    {name:"Fahrenheit 451", author:"Ray Bradbury", pages:158}, {name:"The Diary of a Young Girl", author:"Anne Frank", pages:283},
+
+];
 
 //create a constructor function for books
 
@@ -36,12 +44,11 @@ function book (name, author, pages) {
 
    let bookTitle = new Books(name, author, pages);
 
-    library.push(bookTitle);
+    library.unshift(bookTitle);
 
     return display();
 
 }
-
 
 
 // Dom manipulation
@@ -66,8 +73,18 @@ function display () {
 
         contentContainer.className = "contentContainer"
 
-        // access the name of the book from the library array
-        contentContainer.innerText = library[i].name;
+        // add book title
+        let bookTitle = document.createElement("h3");
+        bookTitle.textContent = library[i].name;
+        contentContainer.appendChild(bookTitle);
+        
+        let bookAuthor = document.createElement("p");
+        bookAuthor.textContent = `Author: ${library[i].author}`;
+        contentContainer.appendChild(bookAuthor);
+
+        let bookPages = document.createElement("p");
+        bookPages.textContent = `Pages: ${library[i].pages}`;
+        contentContainer.appendChild(bookPages);
 
         // append the container to the main-container
         container.appendChild(contentContainer);
@@ -78,7 +95,7 @@ function display () {
 }
 
 
-// new book function that adds a book to the library
+// new book function that allows a user to adds a book to the library
 
 function newBook () {
     console.log("opening new book ...");
@@ -160,6 +177,8 @@ function newBook () {
 
 }
 
+// display the books in library array
+display();
 
 //button to call the function new book
 let addNewBook = document.getElementById("addBook");
@@ -190,9 +209,7 @@ addNewBook.addEventListener("click", newBook);
 // eventlisterner for the button
 
 //  NOTES
-// validate form
-// add photos
-// add preloaded books
-// add author and page no on the book details cover
+// validate form and colors
+// add cancel button on form  
 // refactor colors
-//refactor colors
+//refactor code
