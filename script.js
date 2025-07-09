@@ -113,6 +113,11 @@ function display () {
         // append the buttons container to cpntent container
         contentContainer.appendChild(buttonContainer);
 
+        // add eventlistener for button remove
+        removeBook.addEventListener("click", () => {
+            contentContainer.remove();
+        });
+
     }
 
 
@@ -210,18 +215,6 @@ let addNewBook = document.getElementById("addBook");
 
 // event listener for button
 addNewBook.addEventListener("click", newBook);
-
-
-
-// function removeBook for removing book from library
-
-
-
-// Button that call function removeBook
-
-// eventlistener for the button
-
-
 
 
 
