@@ -107,3 +107,14 @@ body {
     width:40%;
     border-radius:10px;
 }
+
+
+/* style for reand unread button when clicked*/
+
+.read-btn {
+    background-color:purple;
+    color:white;
+    padding:0.5rem;
+    width:40%;
+    border-radius:10px;
+}

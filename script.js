@@ -12,29 +12,39 @@ const library = [
 
 ];
 
-//create a constructor function for books
+//create class constructor
 
-function Books (name, author, pages) {
-    this.name = name;
-    this.author = author;
-    this.pages = pages;
-}
+class Books {
 
+    //create a constructor function for books
+    constructor (name, author, pages) {
+        this.name = name;
+        this.author = author;
+        this.pages = pages;
+        
+    }
 
-// Add a prototype readUnread() method for read and unread status of the book
+    // prototype method for read and unread status of the book
 
-Books.prototype.readUnread = function (){
-    // change background color of button to purple
-}
+    readProto(){
 
+        alert(`${this.name} by ${this.author}`)
+    }
 
-// Add a prototype for the method of a unique id crypto.randomUUID()
+    // Add a prototype for the method of a unique id crypto.randomUUID()
+    id () {
 
-Books.prototype.id = function () {
+        let randomId = crypto.randomUUID();
 
-    let id = crypto.randomUUID();
+        console.log(`this is my id ${randomId}`);
 
-    return id;
+        return randomId;
+    }
+
+    greet() {
+        console.log(`Hello ${this.name}: ${this.author}`);
+    }
+
 }
 
 
@@ -93,8 +103,9 @@ function display () {
         let buttonContainer = document.createElement("div");
         buttonContainer.className = "buttons-container";
 
+        // create a button read unread
         let readUnreadBtn = document.createElement("button");
-        readUnreadBtn.textContent = "status";
+        readUnreadBtn.textContent = "unread";
         readUnreadBtn.id = "read-unread";
         readUnreadBtn.className = "btns";
 
@@ -117,6 +128,19 @@ function display () {
         removeBook.addEventListener("click", () => {
             contentContainer.remove();
         });
+
+
+        // add eventlistener for readUnread button
+        readUnreadBtn.addEventListener("click", (event) => {
+
+            if(event.target.innerText == "unread"){
+                console.log(readUnreadBtn.innerText);
+                readUnreadBtn.innerText = "read";
+                readUnreadBtn.className = "read-btn";
+            } 
+            
+        });
+
 
     }
 
