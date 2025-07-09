@@ -6,40 +6,37 @@
 
 
 body {
-    background-color:azure;
     font-size:16px;
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
 /* styles for the grid container that creates the main structure */
 .main-container {
-    border:2px solid black;
     display:grid;
     width:90vw;
     margin:auto;
     grid-template-rows:10% 80%;
-    gap:0.3rem;
-    background-color:white;
+    gap:1rem;
+    background-color:azure;
     padding:2rem;
 }
 
 /* styles for the two grid rows inside the main container */
-.header, .content {
-    border: 2px solid red;
-}
 
 .header {
     grid-row:1/2;
     display:grid;
     grid-template-columns:3fr 1fr;
     padding:0.3rem;
+    align-items:start;
+
 }
 
 /* styles for the navigation section */
 .heading, .add-book {
-    border:2px solid purple;
     display:flex;
     align-items:center;
+    font-weight:bolder;
 }
 
 /* individual styles for the heading on the navigation section */
@@ -61,8 +58,8 @@ body {
 #addBook {
     background-color:blue;
     color:white;
+    padding:0.5rem;
     width:40%;
-    height:50%;
     border-radius:10px;
 }
 
@@ -74,7 +71,54 @@ body {
     flex-wrap:wrap;
     gap:0.5rem;
     padding:0.5rem;
+    align-items:end;
+    height:100%;
 }
+
+/* styles for the form container */
+.form-container {
+    height:70vh;
+    padding:2rem;
+    width:40%;
+    display:flex;
+    align-items:start;
+}
+
+/* styles for the form elements */
+.form {
+    border:2px solid brown;
+    padding:2rem;
+    background-color:gold;
+}
+
+/* styles for form labels */
+.label {
+    font-weight:bold;
+    font-size:1.3rem;
+}
+
+/* styles for form inputs */
+.input {
+    width:100%;
+    height:3vh;
+    border:1px solid grey;
+    margin:0.3rem 0.3rem;
+    font-size:1rem;
+    padding:1rem;
+    font-weight:bold;
+}
+
+/* style for submit button of the form */
+.submitBtn {
+    background-color:lightgreen;
+    padding:0.5rem;
+    width:40%;
+    border-radius:10px;
+    margin-top:1rem;
+    font-weight:bold;
+    border:1px solid lightgreen;
+}
+
 
 /* styles for the individual book card */
 .contentContainer {
@@ -117,4 +161,25 @@ body {
     padding:0.5rem;
     width:40%;
     border-radius:10px;
+}
+
+
+/* styles for pseudo states */
+.input:hover {
+    border:1px solid green;
+}
+
+.input:focus-visible {
+    border:3px solid green;
+    outline:none;
+}
+
+.input:valid {
+    border:2px solid green;
+    background-color:lightgreen;
+}
+
+.input:invalid {
+    border:1px solid red;
+    background-color:lightpink;
 }

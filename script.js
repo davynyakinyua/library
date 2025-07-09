@@ -159,41 +159,57 @@ function newBook () {
 
     // get the form container
 
-    let formContainer = document.getElementById("content");
+    let Container = document.getElementById("content");
+
+    // create a container for form
+    let formContainer = document.createElement("div");
+
+    // add class to the container 
+    formContainer.className = "form-container";
 
     // create a form element
     let form = document.createElement("form");
+    form.className = "form";
 
     // create a label and input for name
     const nameLabel = document.createElement("label");
-    nameLabel.innerText = "Name:";
+    nameLabel.innerText = "BOOK TITLE:";
+    nameLabel.className = "label";
 
     const nameInput = document.createElement("input");
     nameInput.type = "text";
     nameInput.id = "name";
+    nameInput.className = "input";
     nameInput.required = true;
 
     // create a label and input for author
     const authorLabel = document.createElement("label");
-    authorLabel.innerText = "Author:";
+    authorLabel.innerText = "AUTHOR:";
+    authorLabel.className = "label";
 
     const authorInput = document.createElement("input");
     authorInput.type = "text";
     authorInput.id = "author";
+    authorInput.className = "input";
     authorInput.required = true;
 
     //create a label and input for page numbers
     const pagesLabel = document.createElement("label");
-    pagesLabel.innerText = "No. of pages:";
+    pagesLabel.innerText = "NO. OF PAGES:";
+    pagesLabel.className = "label";
 
     const pagesInput = document.createElement("input");
-    pagesInput.type = "text";
+    pagesInput.type = "number";
     pagesInput.id ="pages";
+    pagesInput.className = "input";
+    pagesInput.min = "1";
+    pagesInput.max = "999";
     pagesInput.required = true;
     
     // create a submit button
     const submitButton = document.createElement("button")
     submitButton.type = "submit";
+    submitButton.className = "submitBtn";
     submitButton.innerText = "submit";
 
     // append elements to the form
@@ -210,6 +226,8 @@ function newBook () {
 
     // append the form to the form container
     formContainer.appendChild(form);
+
+    container.appendChild(formContainer);
 
     // add an event listener for the form submission
     form.addEventListener("submit", function(event){
@@ -242,20 +260,6 @@ addNewBook.addEventListener("click", newBook);
 
 
 
+//  NOTES 
 
-// A function that calls the book objects prototype method  readUnread
-
-
-// button that calls the function 
-
-// eventlisterner for the button
-
-
-
-
-//  NOTES
-// validate form and colors
-// add cancel button on form  
-// refactor colors
 //refactor code
-// remove button for removing books - use id to target element
