@@ -11,6 +11,7 @@ body {
     font-family:Georgia, 'Times New Roman', Times, serif;
 }
 
+/* styles for the grid container that creates the main structure */
 .main-container {
     border:2px solid black;
     display:grid;
@@ -22,6 +23,7 @@ body {
     padding:2rem;
 }
 
+/* styles for the two grid rows inside the main container */
 .header, .content {
     border: 2px solid red;
 }
@@ -33,12 +35,14 @@ body {
     padding:0.3rem;
 }
 
+/* styles for the navigation section */
 .heading, .add-book {
     border:2px solid purple;
     display:flex;
     align-items:center;
 }
 
+/* individual styles for the heading on the navigation section */
 .heading {
     font-size:1.5rem;
     grid-column:1/2;
@@ -46,12 +50,14 @@ body {
    
 }
 
+/* class styles for the button on the navigation section */
 .add-book {
     grid-column:2/3;
     justify-content: end;
     padding:0.5rem;
 }
 
+/* Id styles or the button on the navigation section  */
 #addBook {
     background-color:blue;
     color:white;
@@ -60,6 +66,8 @@ body {
     border-radius:10px;
 }
 
+
+/*  styles for the dynamic content container */
 .content {
     grid-row:2/3;
     display:flex;
@@ -68,6 +76,7 @@ body {
     padding:0.5rem;
 }
 
+/* styles for the individual book card */
 .contentContainer {
     border:2px solid blue;
     width:20vw;
@@ -78,4 +87,23 @@ body {
     justify-content: center;
     align-items: center;
     gap:0.5rem;
+}
+
+
+/* styles for buttons container on the book card */
+.buttons-container {
+    padding:0.3rem;
+    margin-top:0.5rem;
+    width:70%;
+    display:flex;
+    justify-content: space-around;
+}
+
+/* styles for the buttons on the book card */
+.btns {
+    background-color:blue;
+    color:white;
+    padding:0.5rem;
+    width:40%;
+    border-radius:10px;
 }
