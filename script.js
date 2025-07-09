@@ -89,6 +89,30 @@ function display () {
         // append the container to the main-container
         container.appendChild(contentContainer);
 
+        // add container and two buttons for readUnread and remove book
+        let buttonContainer = document.createElement("div");
+        buttonContainer.className = "buttons-container";
+
+        let readUnreadBtn = document.createElement("button");
+        readUnreadBtn.textContent = "status";
+        readUnreadBtn.id = "read-unread";
+        readUnreadBtn.className = "btns";
+
+        // append the button to button container
+        buttonContainer.appendChild(readUnreadBtn);
+
+        // create a remove book button
+        let removeBook = document.createElement("button");
+        removeBook.id = "remove-book";
+        removeBook.className = "btns";
+        removeBook.textContent = "Delete";
+
+        // append the button to buttons container
+        buttonContainer.appendChild(removeBook);
+
+        // append the buttons container to cpntent container
+        contentContainer.appendChild(buttonContainer);
+
     }
 
 
@@ -180,6 +204,7 @@ function newBook () {
 // display the books in library array
 display();
 
+
 //button to call the function new book
 let addNewBook = document.getElementById("addBook");
 
@@ -208,8 +233,12 @@ addNewBook.addEventListener("click", newBook);
 
 // eventlisterner for the button
 
+
+
+
 //  NOTES
 // validate form and colors
 // add cancel button on form  
 // refactor colors
 //refactor code
+// remove button for removing books - use id to target element
